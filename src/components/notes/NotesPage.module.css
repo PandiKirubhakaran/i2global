@@ -1,0 +1,29 @@
+.pageContainer {
+  padding: 2rem;
+  position: relative; 
+}
+
+.noteWrapper {
+  margin-bottom: 20px;
+}
+
+.floatingButton {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  background-color: #4f46e5;
+  border: none;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  z-index: 50;
+}
+
+.floatingButton:hover {
+  background-color: #4338ca; 
+}
