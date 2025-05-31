@@ -1,0 +1,37 @@
+.card {
+  border: 1px solid rgb(180, 156, 131);
+  border-radius: 12px;
+  background-color: rgb(244, 241, 222);
+  margin-bottom: 20px;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px;
+  border-bottom: 1px solid rgb(180, 156, 131);
+  background: rgb(243, 210, 179);
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+}
+
+.title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: rgb(91, 82, 58);
+  margin: 0;
+}
+
+.secondary {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.body {
+  font-size: 1rem;
+  color: rgb(91, 82, 58);
+  background-color: rgb(244, 241, 222);
+  padding: 16px;
+}

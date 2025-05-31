@@ -1,0 +1,38 @@
+.container {
+  max-width: 400px;
+  margin: 40px auto;
+}
+
+.buttonGroup {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 16px;
+}
+
+.brownButton {
+  background-color: rgb(234, 176, 127); 
+  color: rgb(91, 82, 58);         
+  border: none;
+  padding: 10px 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.blueButton {
+  background-color: rgb(161, 203, 207); 
+  color: rgb(61, 121, 129);          
+  border: none;
+  padding: 10px 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.brownButton:hover {
+  background-color: #8b4513; 
+}
+
+.blueButton:hover {
+  background-color: #104e8b; 
+}

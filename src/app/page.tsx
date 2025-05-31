@@ -1,10 +1,11 @@
-import Image from "next/image";
-import styles from "./page.module.css";
+import Header from "@/components/common/Header";
 
 export default function Home() {
   return (
-    <div className={styles.page}>
-      <h1>Hello Dear,I'm Back to work</h1>
+    <div>
+      <main style={{ padding: "2rem", background: "rgb(244, 241, 222)",height:'100vh' }}>
+        <h1>Good Morning Brooo</h1>
+      </main>
     </div>
   );
 }

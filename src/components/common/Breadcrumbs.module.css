@@ -1,0 +1,16 @@
+.breadcrumbs {
+  max-width: 1200px;
+  margin: 1rem auto;
+  padding: 0 1rem;
+  color: rgb(88, 75, 53);
+  font-size: 0.95rem;
+}
+
+.breadcrumbs a {
+  color: rgb(164, 157, 134);
+  text-decoration: none;
+}
+
+.breadcrumbs span {
+  margin: 0 0.5rem;
+}

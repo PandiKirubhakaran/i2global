@@ -1,0 +1,23 @@
+.dotGroup {
+  display: flex;
+  gap: 6px; 
+}
+
+.dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.greenDot {
+  background-color: #22c55e; 
+}
+
+.blueDot {
+  background-color: #3b82f6; 
+}
+
+.redDot {
+  background-color: #ef4444;
+}

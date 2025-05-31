@@ -1,0 +1,17 @@
+.inputGroup {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 12px;
+}
+
+.inputGroup label {
+  font-weight: 500;
+  margin-bottom: 4px;
+}
+
+.inputGroup input {
+  padding: 8px 12px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 1rem;
+}
