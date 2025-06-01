@@ -8,7 +8,7 @@ This is a simple Notes Tracker built with Next.js, TypeScript, and Zustand for s
 bash
 Copy
 Edit
-git clone https://github.com/your-username/your-repo.git
+(https://github.com/PandiKirubhakaran/i2global.git)
 cd your-repo
 npm install
 npm run dev
