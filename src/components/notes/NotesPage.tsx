@@ -1,62 +1,57 @@
 "use client";
 
-import { useState } from "react";
 import { FiPlus } from "react-icons/fi";
 import AddNoteModal from "./AddNoteModal";
-import styles from "./NotesPage.module.css";
 import NoteCard from "./NoteCard";
-import classes from "../../app/page.module.css";
+import { useState } from "react";
+import { useNotesStore } from "@/store/useNotesStore";
 import { getGreeting } from "@/utils/greeting";
-
-interface Note {
-  id: number;
-  title: string;
-  content: string;
-  date: Date;
-}
+import styles from "./NotesPage.module.css";
+import classes from "../../app/page.module.css";
 
 export default function NotesPage() {
-  const [notes, setNotes] = useState<Note[]>([]);
   const [showModal, setShowModal] = useState(false);
-
-  const handleAddNote = (title: string, content: string) => {
-    const newNote: Note = {
-      id: Date.now(),
-      title,
-      content,
-      date: new Date(),
-    };
-    setNotes((prev) => [newNote, ...prev]);
-  };
+  const { notes, addNote, updateNote, deleteNote } = useNotesStore();
 
   const handleEdit = (id: number) => {
-    alert(`Edit note with ID ${id} (functionality to be implemented)`);
+    const note = notes.find((n) => n.id === id);
+    if (!note) return;
+
+    const newTitle = prompt("Edit Title:", note.title);
+    const newContent = prompt("Edit Content:", note.content);
+
+    if (newTitle && newContent) {
+      updateNote(id, newTitle, newContent);
+    }
   };
 
+  const handleDelete = (id: number) => {
+    if (confirm("Are you sure you want to delete this note?")) {
+      deleteNote(id);
+    }
+  };
   return (
     <div className={classes.container}>
       <div className={styles.pageContainer}>
-        <h1 style={{ color: "rgb(91, 82, 58)", marginBottom: "20px" }}>
-          {getGreeting()}
-        </h1>
+        <h1>{getGreeting()}</h1>
         {notes.map((note) => (
-          <div key={note.id} className={styles.noteWrapper}>
-            <NoteCard note={note} onEdit={handleEdit} />
-          </div>
+          <NoteCard
+            key={note.id}
+            note={{ ...note, date: new Date(note.date) }}
+            onEdit={handleEdit}
+            onDelete={handleDelete}
+          />
         ))}
+
         <button
           className={styles.floatingButton}
           onClick={() => setShowModal(true)}
-          aria-label="Add Note"
         >
           <FiPlus size={24} color="#fff" />
         </button>
 
         {showModal && (
-          <AddNoteModal
-            onClose={() => setShowModal(false)}
-            onAdd={handleAddNote}
-          />
+          <AddNoteModal onClose={() => setShowModal(false)} onAdd={addNote} />
         )}
       </div>
     </div>

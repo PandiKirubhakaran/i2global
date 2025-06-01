@@ -7,6 +7,7 @@ interface MainCardProps {
   secondary?: React.ReactNode;
   children: React.ReactNode;
   whiteBg?: boolean;
+  className?: string;
 }
 
 export default function MainCard({
@@ -14,9 +15,10 @@ export default function MainCard({
   secondary,
   children,
   whiteBg,
+  className,
 }: MainCardProps) {
   return (
-    <div className={styles.card}>
+    <div className={`${styles.card} ${className ?? ""}`}>
       <div className={styles.header}>
         <h2 className={styles.title}>{title}</h2>
         {secondary && <div className={styles.secondary}>{secondary}</div>}
