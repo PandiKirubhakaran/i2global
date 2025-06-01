@@ -6,6 +6,7 @@ import MainCard from "@/components/common/MainCard";
 import Input from "@/components/common/Input";
 import styles from "./LoginForm.module.css";
 import DotGroup from "../common/DotGroup";
+import { AuthLable } from "@/constant/enums";
 
 export default function LoginForm() {
   const router = useRouter();
@@ -14,8 +15,10 @@ export default function LoginForm() {
 
   return (
     <div className={styles.container}>
-      <MainCard title="Login" secondary={<DotGroup/>}>
-        <h1 style={{ textAlign: "center", marginBottom: "10px" }}>Login</h1>
+      <MainCard title="Login" secondary={<DotGroup />}>
+        <h1 style={{ textAlign: "center", marginBottom: "10px" }}>
+          {AuthLable.Login}
+        </h1>
         <Input label="Email" type="email" value={email} onChange={setEmail} />
         <Input
           label="Password"
@@ -27,16 +30,16 @@ export default function LoginForm() {
         <div className={styles.buttonGroup}>
           <button
             className={styles.brownButton}
-            onClick={() => alert("Logged in!")}
+            onClick={() => router.push("/notes")}
           >
-            Login
+            {AuthLable.Login}
           </button>
 
           <button
             className={styles.blueButton}
             onClick={() => router.push("/signup")}
           >
-            Register
+            {AuthLable.Register}
           </button>
         </div>
       </MainCard>

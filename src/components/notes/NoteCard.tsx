@@ -3,6 +3,7 @@
 import MainCard from "@/components/common/MainCard";
 import styles from "./NoteCard.module.css";
 import { formatDate } from "@/utils/format";
+import { ButtonLable } from "@/constant/enums";
 
 export interface Note {
   id: number;
@@ -24,23 +25,23 @@ export default function NoteCard({ note, onEdit, onDelete }: NoteCardProps) {
       secondary={
         <div className={styles.buttonGroup}>
           <button className={styles.editButton} onClick={() => onEdit(note.id)}>
-            Edit
+            {ButtonLable.Edit}
           </button>
           <button
             className={styles.deleteButton}
             onClick={() => onDelete(note.id)}
           >
-            Delete
+            {ButtonLable.Delete}
           </button>
         </div>
       }
       whiteBg
-       className={styles.card}
+      className={styles.card}
     >
       <div>
         <div className={styles.content}>{note.content}</div>
         <div className={styles.footer}>
-          Last Modifier: {formatDate(new Date(note.date))}
+          {ButtonLable.LastModifier} {formatDate(new Date(note.date))}
         </div>
       </div>
     </MainCard>

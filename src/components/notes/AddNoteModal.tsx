@@ -4,6 +4,7 @@ import { useState, Fragment } from "react";
 import MainCard from "@/components/common/MainCard";
 import Input from "@/components/common/Input";
 import styles from "./AddNoteModal.module.css";
+import { ButtonLable } from "@/constant/enums";
 
 interface AddNoteModalProps {
   onClose: () => void;
@@ -50,10 +51,10 @@ export default function AddNoteModal({ onClose, onAdd }: AddNoteModalProps) {
 
           <div className={styles.buttonGroup}>
             <button className={styles.addButton} onClick={handleAdd}>
-              Add
+              {ButtonLable.Add}
             </button>
             <button className={styles.cancelButton} onClick={onClose}>
-              Cancel
+              {ButtonLable.Cancel}
             </button>
           </div>
         </MainCard>

@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import styles from "./Breadcrumbs.module.css";
+import { AuthLable } from "@/constant/enums";
 
 export default function Breadcrumbs() {
   const pathname = usePathname();
@@ -20,7 +21,7 @@ export default function Breadcrumbs() {
 
   return (
     <nav className={styles.breadcrumbs}>
-      <Link href="/">Homepage</Link> <span>/</span> <span>{current}</span>
+      <Link href="/">{AuthLable.Homepage}</Link> <span>/</span> <span>{current}</span>
     </nav>
   );
 }
