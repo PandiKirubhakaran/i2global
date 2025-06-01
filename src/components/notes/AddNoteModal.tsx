@@ -40,7 +40,6 @@ export default function AddNoteModal({ onClose, onAdd }: AddNoteModalProps) {
         >
           <Input label="" value={title} onChange={setTitle} />
           <div className={styles.textareaGroup}>
-            {/* <label className={styles.textareaLabel}>Content</label> */}
             <textarea
               className={styles.textarea}
               rows={5}
